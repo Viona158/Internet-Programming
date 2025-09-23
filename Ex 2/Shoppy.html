@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shoppy - Online Shopping</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <!-- Header -->
+    <h2 align="center">SHOPPY 🛒</h2>
+    <center>
+        <h1>🛒 Welcome to <u>Shoppy</u></h1>
+        <h3>Your one-stop shop for everything you need!</h3>
+    </center>
+
+    <hr>
+
+    <!-- Navigation Menu -->
+    <center>
+        <table width="100%" border="0" cellspacing="10">
+            <tr align="center">
+                <td><a href="#home">Home</a></td>
+                <td><a href="#products">Products</a></td>
+                <td><a href="#deals">Deals</a></td>
+                <td><a href="#cart">Cart</a></td>
+                <td><a href="#contact">Contact</a></td>
+            </tr>
+        </table>
+    </center>
+
+    <hr id="home">
+
+    <!-- Banner with IMAGE MAP -->
+    <center>
+        <img src="shop.jpg" alt="Shopping Banner" width="100%" usemap="#shopmap">
+    </center>
+
+    <!-- Define clickable regions on the banner -->
+    <map name="shopmap">
+        <!-- Adjust coords to match your banner layout (format: left,top,right,bottom) -->
+        <area shape="rect" coords="0,0,400,300" href="#electronics" alt="Electronics">
+        <area shape="rect" coords="401,0,800,300" href="#fashion" alt="Fashion">
+        <area shape="rect" coords="801,0,1200,300" href="#home" alt="Home & Kitchen">
+    </map>
+
+    <hr>
+
+    <!-- Featured Products Scroller -->
+    <h2>🛍️ Featured Products</h2>
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+        <img src="pro1.jpg" width="150" height="150" alt="Product 1">
+        <img src="pro2.jpg" width="150" height="150" alt="Product 2">
+        <img src="pro3.jpg" width="150" height="150" alt="Product 3">
+        <img src="pro4.jpg" width="150" height="150" alt="Product 4">
+        <img src="pro5.jpg" width="150" height="150" alt="Product 5">
+    </marquee>
+
+    <hr>
+
+    <!-- MEDIA: Promo Video + Store Jingle -->
+    <h2 id="deals">🎬 Latest products</h2>
+    <p>Watch our latest promo and listen to our short store jingle.</p>
+    <video width="480" controls>
+        <source src="promo.mp4" type="video/mp4">
+        <source src="promo.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    <br><br>
+    <audio controls>
+        <source src="output.mp3" type="audio/mpeg">
+        <source src="output.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <hr>
+
+    <!-- GRAPHICS: Canvas Sales Chart -->
+    <h2>📈 Weekly Sales (Canvas)</h2>
+    <canvas id="salesCanvas" width="640" height="240">
+        Your browser does not support the canvas element.
+    </canvas>
+
+    <hr>
+
+    <!-- Categories -->
+    <fieldset>
+        <legend><b>📦 Categories</b></legend>
+        <ul>
+            <li id="electronics">📱 Electronics</li>
+            <li id="fashion">👗 Fashion</li>
+            <li id="homekitchen">🏠 Home & Kitchen</li>
+            <li>📚 Books</li>
+            <li>🛒 Groceries</li>
+        </ul>
+    </fieldset>
+
+    <br>
+
+    <!-- DRAG & DROP SHOPPING CART DEMO -->
+    <fieldset id="products">
+        <legend><b>⭐ Drag Products into Cart</b></legend>
+
+        <table border="1" width="100%" cellpadding="10">
+            <tr bgcolor="#f2f2f2">
+                <th width="25%">Product</th>
+                <th>Description</th>
+                <th width="15%">Price (₹)</th>
+                <th width="20%">Drag</th>
+            </tr>
+
+            <tr>
+                <td>Smartphone</td>
+                <td>Latest model with high-speed performance</td>
+                <td align="right">80000</td>
+                <td align="center">
+                    <div draggable="true"
+                         ondragstart="onDragStart(event)"
+                         data-name="Smarphone"
+                         data-price="80000"
+                         title="Drag me into the cart">
+                        📱 Drag to Cart
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Running Shoes</td>
+                <td>Comfortable, lightweight and stylish</td>
+                <td align="right">2000</td>
+                <td align="center">
+                    <div draggable="true"
+                         ondragstart="onDragStart(event)"
+                         data-name="Running Shoes"
+                         data-price="2000"
+                         title="Drag me into the cart">
+                        👟 Drag to Cart
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Microwave Oven</td>
+                <td>900W with grill and timer function</td>
+                <td align="right">25000</td>
+                <td align="center">
+                    <div draggable="true"
+                         ondragstart="onDragStart(event)"
+                         data-name="Microwave Oven"
+                         data-price="25000"
+                         title="Drag me into the cart">
+                        🍲 Drag to Cart
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <table id="cart" border="2" width="100%" cellpadding="10"
+               ondragover="onDragOver(event)" ondrop="onDrop(event)">
+            <tr bgcolor="#e8f8ff">
+                <th>🛒 Your Cart (drop items here)</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul id="cartItems">
+                        <li>(Cart is empty)</li>
+                    </ul>
+                    <b>Total: ₹<span id="cartTotal">0</span></b>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <br>
+
+    <!-- Customer Login -->
+    <fieldset>
+        <legend><b>🔐 Customer Login</b></legend>
+        <form onsubmit="alert('Demo only'); return false;">
+            <label>Username:</label><br>
+            <input type="text" name="username" required><br><br>
+
+            <label>Password:</label><br>
+            <input type="password" name="password" required><br><br>
+
+            <input type="submit" value="Login">
+        </form>
+    </fieldset>
+
+    <br>
+
+    <!-- GEOLOCATION -->
+    <fieldset>
+        <legend><b>📍 Find My Location</b></legend>
+        <p>Click to get your current location (with your permission) and open it in Maps.</p>
+        <button onclick="getLocation()">Get My Location</button>
+        <p id="geoStatus">Status: waiting…</p>
+        <p>
+            <a id="mapLink" href="#" target="_blank">Open in Google Maps</a>
+        </p>
+    </fieldset>
+
+    <br>
+
+    <hr>
+
+    <!-- Footer -->
+    <center id="contact">
+        <p><b>© 2025 ShopEasy Inc.</b><br>
+        Contact: support@shopeasy.com</p>
+    </center>
+
+    <script>
+        // ----- Drag & Drop Cart -----
+        var cart = [];
+        function onDragStart(event) {
+            var name = event.target.getAttribute('data-name');
+            var price = event.target.getAttribute('data-price');
+            event.dataTransfer.setData('text/plain', JSON.stringify({ name: name, price: Number(price) }));
+        }
+        function onDragOver(event) {
+            event.preventDefault(); // allow drop
+        }
+        function onDrop(event) {
+            event.preventDefault();
+            try {
+                var data = JSON.parse(event.dataTransfer.getData('text/plain'));
+                cart.push(data);
+                renderCart();
+            } catch (e) {
+                alert('Could not add item.');
+            }
+        }
+        function renderCart() {
+            var list = document.getElementById('cartItems');
+            var totalSpan = document.getElementById('cartTotal');
+            list.innerHTML = '';
+            if (cart.length === 0) {
+                var li = document.createElement('li');
+                li.textContent = '(Cart is empty)';
+                list.appendChild(li);
+                totalSpan.textContent = '0';
+                return;
+            }
+            var total = 0;
+            for (var i = 0; i < cart.length; i++) {
+                var item = cart[i];
+                var li = document.createElement('li');
+                li.textContent = item.name + ' — ₹' + item.price;
+                list.appendChild(li);
+                total += item.price;
+            }
+            totalSpan.textContent = total;
+        }
+
+        // ----- Geolocation -----
+        function getLocation() {
+            var status = document.getElementById('geoStatus');
+            var link = document.getElementById('mapLink');
+            if (!navigator.geolocation) {
+                status.textContent = 'Status: Geolocation is not supported in this browser.';
+                return;
+            }
+            status.textContent = 'Status: requesting permission…';
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                var lat = pos.coords.latitude.toFixed(6);
+                var lon = pos.coords.longitude.toFixed(6);
+                status.textContent = 'Status: got location → ' + lat + ', ' + lon;
+                link.href = 'https://www.google.com/maps?q=' + lat + ',' + lon;
+                link.textContent = 'Open ' + lat + ', ' + lon + ' in Google Maps';
+            }, function (err) {
+                status.textContent = 'Status: ' + (err.message || 'Permission denied.');
+            });
+        }
+
+        // ----- Canvas Chart (simple bar chart) -----
+        (function drawChart() {
+            var canvas = document.getElementById('salesCanvas');
+            if (!canvas || !canvas.getContext) return;
+            var ctx = canvas.getContext('2d');
+
+            // Data
+            var labels = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+            var values = [5, 9, 7, 12, 15, 10, 6]; // example sales
+            var w = canvas.width, h = canvas.height;
+
+            // Clear
+            ctx.clearRect(0, 0, w, h);
+
+            // Axes
+            ctx.beginPath();
+            ctx.moveTo(40, 10);
+            ctx.lineTo(40, h - 30);
+            ctx.lineTo(w - 10, h - 30);
+            ctx.stroke();
+
+            // Bars
+            var maxVal = Math.max.apply(null, values);
+            var barAreaWidth = w - 60;
+            var barWidth = Math.floor(barAreaWidth / values.length) - 10;
+            for (var i = 0; i < values.length; i++) {
+                var x = 50 + i * (barWidth + 10);
+                var barHeight = Math.round(((h - 60) * values[i]) / maxVal);
+                var y = (h - 30) - barHeight;
+                ctx.fillRect(x, y, barWidth, barHeight);
+
+                // Labels
+                ctx.fillText(labels[i], x + Math.floor(barWidth/4), h - 12);
+                ctx.fillText(values[i], x + Math.floor(barWidth/4), y - 4);
+            }
+
+            // Title
+            ctx.font = '16px sans-serif';
+            ctx.fillText('Weekly Sales', 260, 20);
+        })();
+    </script>
+</body>
+</html>

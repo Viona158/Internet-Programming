@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Quiz</title>
+    <script>
+        function checkQuiz() {
+            let score = 0;
+
+            // Get user answers
+            let q1 = document.querySelector('input[name="q1"]:checked');
+            let q2 = document.querySelector('input[name="q2"]:checked');
+            let q3 = document.querySelector('input[name="q3"]:checked');
+            let q4 = document.querySelector('input[name="q4"]:checked');
+            let q5 = document.querySelector('input[name="q5"]:checked');
+
+            // Check answers
+            if(q1 && q1.value === "b") score++;
+            if(q2 && q2.value === "c") score++;
+            if(q3 && q3.value === "b") score++;
+            if(q4 && q4.value === "a") score++;
+            if(q5 && q5.value === "b") score++;
+
+            // Show result
+            alert("Your Score: " + score + " / 5");
+        }
+    </script>
+</head>
+<body>
+    <h2>Simple Online Quiz</h2>
+
+    <div>
+        <p>1. Who developed Java?</p>
+        <input type="radio" name="q1" value="a"> Microsoft<br>
+        <input type="radio" name="q1" value="b"> Sun Microsystems<br>
+        <input type="radio" name="q1" value="c"> Google<br>
+    </div>
+
+    <div>
+        <p>2. Which is not a programming language?</p>
+        <input type="radio" name="q2" value="a"> Python<br>
+        <input type="radio" name="q2" value="b"> Java<br>
+        <input type="radio" name="q2" value="c"> HTML<br>
+    </div>
+
+    <div>
+        <p>3. Servlet runs on?</p>
+        <input type="radio" name="q3" value="a"> Web Server<br>
+        <input type="radio" name="q3" value="b"> Application Server<br>
+        <input type="radio" name="q3" value="c"> Browser<br>
+    </div>
+
+    <div>
+        <p>4. Which of these is a database?</p>
+        <input type="radio" name="q4" value="a"> MySQL<br>
+        <input type="radio" name="q4" value="b"> JavaScript<br>
+        <input type="radio" name="q4" value="c"> HTML<br>
+    </div>
+
+    <div>
+        <p>5. Which tag is used for inserting an image in HTML?</p>
+        <input type="radio" name="q5" value="a"> &lt;image&gt;<br>
+        <input type="radio" name="q5" value="b"> &lt;img&gt;<br>
+        <input type="radio" name="q5" value="c"> &lt;picture&gt;<br>
+    </div>
+
+    <button onclick="checkQuiz()">Submit Quiz</button>
+</body>
+</html>

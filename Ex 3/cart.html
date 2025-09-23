@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart - ShopEase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    table th, table td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    table th {
+      background: #4facfe;
+      color: white;
+    }
+    .btn {
+      background: #ff6f61;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #e85d50;
+    }
+  </style>
+</head>
+<body>
+  <h2>My Cart</h2>
+  <table>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+    <tr>
+      <td>Stylish Sneakers</td>
+      <td>$49.99</td>
+      <td>1</td>
+      <td>$49.99</td>
+    </tr>
+    <tr>
+      <td>Smart Watch</td>
+      <td>$89.99</td>
+      <td>1</td>
+      <td>$89.99</td>
+    </tr>
+    <tr>
+      <th colspan="3">Grand Total</th>
+      <th>$139.98</th>
+    </tr>
+  </table>
+  <br>
+  <button class="btn">Proceed to Checkout</button>
+</body>
+</html>

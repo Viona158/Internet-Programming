@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shoppy - Online Shopping</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <h2 align="center">SHOPPY 🛒</h2>
+    <center>
+        <h1>🛒 Welcome to <u>Shoppy</u></h1>
+        <h3>Your one-stop shop for everything you need!</h3>
+    </center>
+
+    <hr>
+
+    <center>
+        <table width="100%" border="0" cellspacing="10">
+            <tr align="center">
+                <td><a href="#home">Home</a></td>
+                <td><a href="#products">Products</a></td>
+                <td><a href="#deals">Deals</a></td>
+                <td><a href="#cart">Cart</a></td>
+                <td><a href="#contact">Contact</a></td>
+            </tr>
+        </table>
+    </center>
+
+    <hr id="home">
+
+    <center>
+        <img src="shop.jpg" alt="Shopping Banner" width="100%">
+    </center>
+
+    <map name="shopmap">
+        <area shape="rect" coords="0,0,400,300" href="#electronics" alt="Electronics">
+        <area shape="rect" coords="401,0,800,300" href="#fashion" alt="Fashion">
+        <area shape="rect" coords="801,0,1200,300" href="#homekitchen" alt="Home & Kitchen">
+    </map>
+
+    <hr>
+
+    <h2>🛍️ Featured Products</h2>
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+        <img src="pro1.jpg" width="150" height="150" alt="Product 1">
+        <img src="pro2.jpg" width="150" height="150" alt="Product 2">
+        <img src="pro3.jpg" width="150" height="150" alt="Product 3">
+        <img src="pro4.jpg" width="150" height="150" alt="Product 4">
+        <img src="pro5.jpg" width="150" height="150" alt="Product 5">
+    </marquee>
+
+    <hr>
+
+    <h2 id="deals">🎬 Promo Video & 🎵 Store Jingle</h2>
+    <video width="480" controls>
+        <source src="promo.mp4" type="video/mp4">
+        <source src="promo.webm" type="video/webm">
+    </video>
+    <br><br>
+    <audio controls>
+        <source src="jingle.mp3" type="audio/mpeg">
+        <source src="jingle.ogg" type="audio/ogg">
+    </audio>
+
+    <hr>
+
+    <h2>📈 Weekly Sales (Canvas)</h2>
+    <canvas width="640" height="240"></canvas>
+
+    <hr>
+
+    <fieldset>
+        <legend><b>📦 Categories</b></legend>
+        <ul>
+            <li id="electronics">📱 Electronics</li>
+            <li id="fashion">👗 Fashion</li>
+            <li id="homekitchen">🏠 Home & Kitchen</li>
+            <li>📚 Books</li>
+            <li>🛒 Groceries</li>
+        </ul>
+    </fieldset>
+
+    <br>
+
+    <fieldset id="products">
+        <legend><b>⭐ Products</b></legend>
+        <table border="1" width="100%" cellpadding="10">
+            <tr>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Price (₹)</th>
+            </tr>
+            <tr>
+                <td>Smartphone</td>
+                <td>Latest model with high-speed performance</td>
+                <td align="right">699</td>
+            </tr>
+            <tr>
+                <td>Running Shoes</td>
+                <td>Comfortable, lightweight and stylish</td>
+                <td align="right">59</td>
+            </tr>
+            <tr>
+                <td>Microwave Oven</td>
+                <td>900W with grill and timer function</td>
+                <td align="right">129</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend><b>🔐 Customer Login</b></legend>
+        <form>
+            <label>Username:</label><br>
+            <input type="text" name="username"><br><br>
+
+            <label>Password:</label><br>
+            <input type="password" name="password"><br><br>
+
+            <input type="submit" value="Login">
+        </form>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend><b>📍 Find My Location</b></legend>
+        <p>Location feature available (HTML only, no script).</p>
+    </fieldset>
+
+    <br>
+
+    <hr>
+
+    <center id="contact">
+        <p><b>© 2025 ShopEasy Inc.</b><br>
+        Contact: support@shopeasy.com</p>
+    </center>
+
+</body>
+</html>
